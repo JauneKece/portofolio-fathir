@@ -11,3 +11,9 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* src/index.css */
+/* The following lines require Tailwind CSS and PostCSS to be set up in your build process */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
