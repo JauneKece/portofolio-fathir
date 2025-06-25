@@ -20,7 +20,10 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert('Message sent! (This is a demo)');
+    const phoneNumber = '6285893650200'; // Ganti dengan nomor WhatsApp Anda
+    const message = `Halo, perkenalkan nama saya ${formData.name} (${formData.email}). Saya ingin menghubungi Anda melalui website portfolio. Berikut pesan saya: (${formData.message}) Terima kasih.`;
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, '_blank');
     setFormData({ name: '', email: '', message: '' });
   };
 
@@ -45,7 +48,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <p className="font-medium text-slate-800">Email</p>
-                    <p className="text-slate-600">john@vintagedev.com</p>
+                    <p className="text-slate-600">fathirdwi28@gmail.com</p>
                   </div>
                 </div>
                 
@@ -55,7 +58,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <p className="font-medium text-slate-800">GitHub</p>
-                    <p className="text-slate-600">@johnvintage</p>
+                    <p className="text-slate-600">JauneKece</p>
                   </div>
                 </div>
                 
@@ -65,7 +68,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <p className="font-medium text-slate-800">LinkedIn</p>
-                    <p className="text-slate-600">@johnvintage</p>
+                    <p className="text-slate-600">@FathirDwiAssyawal</p>
                   </div>
                 </div>
               </div>
