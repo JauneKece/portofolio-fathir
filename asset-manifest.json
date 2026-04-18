@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/portofolio-fathir/static/css/main.c68e143a.css",
+    "main.js": "/portofolio-fathir/static/js/main.433bf9c9.js",
+    "static/js/453.046c664f.chunk.js": "/portofolio-fathir/static/js/453.046c664f.chunk.js",
+    "index.html": "/portofolio-fathir/index.html",
+    "main.c68e143a.css.map": "/portofolio-fathir/static/css/main.c68e143a.css.map",
+    "main.433bf9c9.js.map": "/portofolio-fathir/static/js/main.433bf9c9.js.map",
+    "453.046c664f.chunk.js.map": "/portofolio-fathir/static/js/453.046c664f.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c68e143a.css",
+    "static/js/main.433bf9c9.js"
+  ]
+}
