@@ -4,7 +4,6 @@ import Home from './components/sections/Home/Home';
 import About from './components/sections/About/About';
 import Portfolio from './components/sections/Portfolio/Portfolio';
 import Certificates from './components/sections/Certificates/Certificates';
-import Contact from './components/sections/Contact/Contact';
 import Footer from './components/common/Footer/Footer';
 import { useActiveSection } from './hooks/useActiveSection';
 
@@ -27,8 +26,6 @@ function App() {
         return <Portfolio />;
       case 'certificates':
         return <Certificates />;
-      case 'contact':
-        return <Contact />;
       default:
         return <Home setActiveSection={setActiveSection} />;
     }

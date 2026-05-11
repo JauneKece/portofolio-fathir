@@ -1,14 +1,13 @@
 // src/components/common/Navigation/Navigation.jsx
 import React from 'react';
-import { Menu, X, User, Briefcase, Award, Mail } from 'lucide-react';
+import { Menu, X, Home, User, Briefcase, Award } from 'lucide-react';
 
 const Navigation = ({ activeSection, setActiveSection, isMenuOpen, setIsMenuOpen }) => {
   const sections = [
-    { id: 'home', label: 'Home', icon: User },
+    { id: 'home', label: 'Home', icon: Home },
     { id: 'about', label: 'About Me', icon: User },
     { id: 'portfolio', label: 'Portfolio', icon: Briefcase },
-    { id: 'certificates', label: 'Certificates', icon: Award },
-    { id: 'contact', label: 'Contact', icon: Mail }
+    { id: 'certificates', label: 'Certificates', icon: Award }
   ];
 
   return (

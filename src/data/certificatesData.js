@@ -2,26 +2,50 @@
 export const certificates = [
   {
     id: 1,
-    title: 'AWS Solutions Architect',
-    issuer: 'Amazon Web Services',
+    title: 'Docker Fundamental',
+    issuer: 'Btech Academy',
     date: '2024',
-    image: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=300&h=200&fit=crop',
+    image: '/assets/images/certificates/Sertifikat Adinusa Docker Fundamental.png',
     credentialUrl: '#'
   },
   {
     id: 2,
-    title: 'Google Cloud Professional',
-    issuer: 'Google Cloud',
-    date: '2023',
-    image: 'https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?w=300&h=200&fit=crop',
+    title: 'Linux System Administration',
+    issuer: 'Btech Academy',
+    date: '2024',
+    image: '/assets/images/certificates/Sertifikat Adinusa Linux System Administration.jpg',
     credentialUrl: '#'
   },
   {
     id: 3,
-    title: 'Meta Frontend Developer',
-    issuer: 'Meta',
+    title: 'Basic Cyber Security',
+    issuer: 'Thematic Academy - Kominfo Digitalent',
+    date: '2024',
+    image: '/assets/images/certificates/Sertifikat Cyber Security by Kominfo.png',
+    credentialUrl: '#'
+  },
+  {
+    id: 4,
+    title: 'IDN Mengajar Participant',
+    issuer: 'Politeknik Pengembangan Islamic Development Network',
     date: '2023',
-    image: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=300&h=200&fit=crop',
+    image: '/assets/images/certificates/Sertifikat IDN Mengajar.jpg',
+    credentialUrl: '#'
+  },
+  {
+    id: 5,
+    title: 'Red Hat Application Development I',
+    issuer: 'Red Hat Training and Certification',
+    date: '2025',
+    image: '/assets/images/certificates/Sertifikat Redhat Application Development with Java EE.png',
+    credentialUrl: '#'
+  },
+  {
+    id: 6,
+    title: 'DevFest Bogor 2023',
+    issuer: 'Google Developer Groups Bogor',
+    date: '2023',
+    image: '/assets/images/certificates/Sertifikat Kehadiran DevFest Bogor by GDG-1.png',
     credentialUrl: '#'
   }
 ];
