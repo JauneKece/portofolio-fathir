@@ -1,15 +1,30 @@
 {
   "files": {
-    "main.css": "/portofolio-fathir/static/css/main.c68e143a.css",
-    "main.js": "/portofolio-fathir/static/js/main.433bf9c9.js",
-    "static/js/453.046c664f.chunk.js": "/portofolio-fathir/static/js/453.046c664f.chunk.js",
+    "main.css": "/portofolio-fathir/static/css/main.12868aa7.css",
+    "main.js": "/portofolio-fathir/static/js/main.2b56f528.js",
+    "static/js/453.798e9613.chunk.js": "/portofolio-fathir/static/js/453.798e9613.chunk.js",
+    "static/media/web-reservasi.png": "/portofolio-fathir/static/media/web-reservasi.db6ad722152a3b744b71.png",
+    "static/media/web-konseling.png": "/portofolio-fathir/static/media/web-konseling.fe9a27639fe35a042157.png",
+    "static/media/game-roblox.png": "/portofolio-fathir/static/media/game-roblox.0736d551d217591ccb2b.png",
+    "static/media/Sertifikat Adinusa Docker Fundamental.png": "/portofolio-fathir/static/media/Sertifikat Adinusa Docker Fundamental.fe8cbaa39b0aab2cb35a.png",
+    "static/media/Sertifikat Kehadiran DevFest Bogor by GDG-1.png": "/portofolio-fathir/static/media/Sertifikat Kehadiran DevFest Bogor by GDG-1.a30776712ca56fcb0478.png",
+    "static/media/Sertifikat Cyber Security by Kominfo.png": "/portofolio-fathir/static/media/Sertifikat Cyber Security by Kominfo.a8c498e8cddc65ff2d5a.png",
+    "static/media/Sertifikat BNSP Jaringan Komputer.jpg": "/portofolio-fathir/static/media/Sertifikat BNSP Jaringan Komputer.e1eff98fd93ca1be973f.jpg",
+    "static/media/Sertifikat IDN Mengajar.jpg": "/portofolio-fathir/static/media/Sertifikat IDN Mengajar.85a4ff09fca6c2f570fa.jpg",
+    "static/media/Sertifikat BNSP Jaringan Komputer Belakang.jpg": "/portofolio-fathir/static/media/Sertifikat BNSP Jaringan Komputer Belakang.0651200ca349e42cb6f5.jpg",
+    "static/media/Sertifikat Magang Mobile Developer.jpg": "/portofolio-fathir/static/media/Sertifikat Magang Mobile Developer.836cdc5cbf8fdb21470e.jpg",
+    "static/media/Sertifikat Adinusa Linux System Administration.jpg": "/portofolio-fathir/static/media/Sertifikat Adinusa Linux System Administration.2edcc0546fa55e1b5360.jpg",
+    "static/media/Sertifikat Redhat Application Development with Java EE.png": "/portofolio-fathir/static/media/Sertifikat Redhat Application Development with Java EE.0b568894ee2e57f5c050.png",
+    "static/media/bot-discord.png": "/portofolio-fathir/static/media/bot-discord.82e48bdb61f7fcf9aa11.png",
+    "static/media/app-timemanagement.jpeg": "/portofolio-fathir/static/media/app-timemanagement.8a2e479230fa8fccc263.jpeg",
+    "static/media/app-moodjournal.jpeg": "/portofolio-fathir/static/media/app-moodjournal.774f5a5cf27dcabced34.jpeg",
     "index.html": "/portofolio-fathir/index.html",
-    "main.c68e143a.css.map": "/portofolio-fathir/static/css/main.c68e143a.css.map",
-    "main.433bf9c9.js.map": "/portofolio-fathir/static/js/main.433bf9c9.js.map",
-    "453.046c664f.chunk.js.map": "/portofolio-fathir/static/js/453.046c664f.chunk.js.map"
+    "main.12868aa7.css.map": "/portofolio-fathir/static/css/main.12868aa7.css.map",
+    "main.2b56f528.js.map": "/portofolio-fathir/static/js/main.2b56f528.js.map",
+    "453.798e9613.chunk.js.map": "/portofolio-fathir/static/js/453.798e9613.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.c68e143a.css",
-    "static/js/main.433bf9c9.js"
+    "static/css/main.12868aa7.css",
+    "static/js/main.2b56f528.js"
   ]
 }
