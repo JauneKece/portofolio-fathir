@@ -1,7 +1,6 @@
 // src/components/sections/About/About.jsx
 import React, { useState } from 'react';
 import Card from '../../ui/Card/Card';
-import SkillBar from '../../ui/SkillBar/SkillBar';
 import AnimatedCounter from '../../ui/AnimatedCounter/AnimatedCounter';
 import Badge from '../../ui/Badge/Badge';
 import { skills, experience } from '../../../data/skillsData';
@@ -10,18 +9,17 @@ import { Code2, Zap, Award, Target } from 'lucide-react';
 const About = () => {
   const [expandedExp, setExpandedExp] = useState(null);
 
-  // Skill proficiencies
-  const skillProficiencies = [
-    { name: 'React & Next.js', percentage: 90, color: 'bg-blue-500' },
-    { name: 'Full Stack Development', percentage: 85, color: 'bg-purple-500' },
-    { name: 'Mobile Development (Flutter)', percentage: 80, color: 'bg-cyan-500' },
-    { name: 'UI/UX Design', percentage: 75, color: 'bg-pink-500' },
-    { name: 'Database Design', percentage: 80, color: 'bg-green-500' },
-    { name: 'Git & DevOps', percentage: 75, color: 'bg-orange-500' }
+  // Core Skills
+  const coreSkills = [
+    { name: 'Frontend Web', icon: '⚛️' },
+    { name: 'Flutter & Mobile Dev', icon: '📱' },
+    { name: 'UI/UX Design', icon: '🎨' },
+    { name: 'Database & Backend Basics', icon: '💾' },
+    { name: 'Git & Version Control', icon: '📦' }
   ];
 
   return (
-    <div className="min-h-screen py-20 px-4">
+    <div className="min-h-screen py-20 px-4 overflow-hidden">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
@@ -31,11 +29,10 @@ const About = () => {
         </div>
 
         {/* Stats Section */}
-        <div className="grid md:grid-cols-4 gap-8 mb-16">
-          <AnimatedCounter end={6} label="Years of Experience" suffix="+" />
-          <AnimatedCounter end={50} label="Projects Completed" suffix="+" />
+        <div className="grid md:grid-cols-3 gap-8 mb-16">
+          <AnimatedCounter end={8} label="Portfolio Projects" />
           <AnimatedCounter end={15} label="Technologies" />
-          <AnimatedCounter end={100} label="Satisfaction Rate" suffix="%" />
+          <AnimatedCounter end={5} label="Certifications" suffix="+" />
         </div>
 
         {/* Main Content */}
@@ -48,10 +45,10 @@ const About = () => {
                 <div>
                   <h3 className="text-2xl font-bold mb-4 text-slate-800">My Story</h3>
                   <p className="text-slate-600 leading-relaxed mb-4">
-                    I'm a passionate full-stack developer with a keen eye for creating digital solutions that not only solve problems but also delight users. My journey began with a curiosity about how things work, which evolved into a deep passion for web and mobile development.
+                    I'm a developer fresh graduate passionate about creating beautiful and functional digital experiences across platforms. My journey started with exploring both mobile and web development during SMK, and I've developed a strong interest in crafting responsive interfaces for both mobile apps and modern web applications.
                   </p>
                   <p className="text-slate-600 leading-relaxed">
-                    With expertise spanning from UI/UX design to backend architecture, I bring a holistic approach to every project. I believe in continuous learning and staying at the forefront of technology.
+                    With expertise in frontend development (React, Flutter), UI/UX design, and a foundational understanding of backend systems, I'm committed to building intuitive, user-friendly applications. I love exploring how users interact with technology and am always eager to learn and grow.
                   </p>
                 </div>
               </div>
@@ -61,23 +58,23 @@ const About = () => {
             <div className="grid grid-cols-2 gap-4">
               <Card className="p-6 text-center hover:shadow-xl transition-all">
                 <Code2 className="text-blue-500 mx-auto mb-3" size={32} />
-                <h4 className="font-bold text-slate-800 mb-2">Web Development</h4>
-                <p className="text-sm text-slate-600">Modern, responsive websites</p>
+                <h4 className="font-bold text-slate-800 mb-2">Web Frontend</h4>
+                <p className="text-sm text-slate-600">React, responsive design</p>
               </Card>
               <Card className="p-6 text-center hover:shadow-xl transition-all">
-                <Zap className="text-orange-500 mx-auto mb-3" size={32} />
-                <h4 className="font-bold text-slate-800 mb-2">Performance</h4>
-                <p className="text-sm text-slate-600">Fast & optimized solutions</p>
+                <Zap className="text-cyan-500 mx-auto mb-3" size={32} />
+                <h4 className="font-bold text-slate-800 mb-2">Mobile Apps</h4>
+                <p className="text-sm text-slate-600">Flutter & React Native</p>
               </Card>
               <Card className="p-6 text-center hover:shadow-xl transition-all">
                 <Award className="text-purple-500 mx-auto mb-3" size={32} />
-                <h4 className="font-bold text-slate-800 mb-2">Best Practices</h4>
-                <p className="text-sm text-slate-600">Clean, maintainable code</p>
+                <h4 className="font-bold text-slate-800 mb-2">UI/UX Design</h4>
+                <p className="text-sm text-slate-600">Beautiful, intuitive interfaces</p>
               </Card>
               <Card className="p-6 text-center hover:shadow-xl transition-all">
                 <Target className="text-green-500 mx-auto mb-3" size={32} />
-                <h4 className="font-bold text-slate-800 mb-2">Problem Solving</h4>
-                <p className="text-sm text-slate-600">Creative solutions</p>
+                <h4 className="font-bold text-slate-800 mb-2">Clean Code</h4>
+                <p className="text-sm text-slate-600">Maintainable solutions</p>
               </Card>
             </div>
           </div>
@@ -86,14 +83,14 @@ const About = () => {
           <div className="space-y-6">
             <Card className="p-8 hover:shadow-2xl transition-all duration-500">
               <h3 className="text-2xl font-bold mb-8 text-slate-800">Technical Skills</h3>
-              {skillProficiencies.map((skill) => (
-                <SkillBar 
-                  key={skill.name} 
-                  name={skill.name} 
-                  percentage={skill.percentage}
-                  color={skill.color}
-                />
-              ))}
+              <div className="space-y-3">
+                {coreSkills.map((skill) => (
+                  <div key={skill.name} className="flex items-center space-x-3 p-3 bg-gradient-to-r from-slate-50 to-slate-100 rounded-lg hover:from-blue-50 hover:to-cyan-50 transition-colors">
+                    <span className="text-2xl">{skill.icon}</span>
+                    <span className="text-slate-700 font-medium">{skill.name}</span>
+                  </div>
+                ))}
+              </div>
             </Card>
 
             <Card className="p-8 bg-gradient-to-br from-slate-50 to-slate-100">

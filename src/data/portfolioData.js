@@ -1,63 +1,64 @@
 // src/data/portfolioData.js
+import robloxGame from '../assets/images/portfolio/game-roblox.png';
+import timeApp from '../assets/images/portfolio/app-timemanagement.jpeg';
+import reservationSys from '../assets/images/portfolio/web-reservasi.png';
+import discordBot from '../assets/images/portfolio/bot-discord.png';
+import moodApp from '../assets/images/portfolio/app-moodjournal.jpeg';
+import studentSys from '../assets/images/portfolio/web-konseling.png';
+
 export const portfolioItems = [
   {
     id: 1,
     title: 'Roblox FPS Game',
     category: 'Game Development',
-    image: 'https://images.unsplash.com/photo-1552820728-8ac41f1ce891?w=400&h=300&fit=crop',
+    image: robloxGame,
     description: 'Developed an immersive FPS game project using Roblox Studio with custom game mechanics and level design',
     tech: ['Roblox Studio', 'Lua'],
-    demoUrl: '#',
-    githubUrl: '#'
+    demoUrl: 'https://www.roblox.com/games/96749482214416/Shooting-Strike',
   },
   {
     id: 2,
     title: 'Time Management Mobile App',
     category: 'Mobile Development',
-    image: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=400&h=300&fit=crop',
+    image: timeApp,
     description: 'Mobile application for managing tasks and time efficiently with local database storage',
     tech: ['Flutter', 'SQLite'],
-    demoUrl: '#',
-    githubUrl: '#'
+    githubUrl: 'https://github.com/JauneKece/pocket_planner'
   },
   {
     id: 3,
     title: 'Online Reservation System',
     category: 'Web Development',
-    image: 'https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=400&h=300&fit=crop',
+    image: reservationSys,
     description: 'Online reservation website for managing bookings with user-friendly interface',
     tech: ['Laravel', 'MySQL'],
-    demoUrl: '#',
-    githubUrl: '#'
+    githubUrl: 'https://github.com/JauneKece/desa-wisatuy'
   },
   {
     id: 4,
     title: 'Discord Bot',
     category: 'Bot Development',
-    image: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=400&h=300&fit=crop',
+    image: discordBot,
     description: 'Custom Discord bot with utility features for private server management and automation',
     tech: ['JavaScript', 'Discord.js'],
-    demoUrl: '#',
-    githubUrl: '#'
+    githubUrl: 'https://github.com/JauneKece/HaloJuan'
   },
   {
     id: 5,
     title: 'Mood Journal Mobile App',
     category: 'Mobile Development',
-    image: 'https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=400&h=300&fit=crop',
+    image: moodApp,
     description: 'Minimalist mood tracking application for recording daily emotions and thoughts with local storage',
     tech: ['Flutter', 'SQLite'],
-    demoUrl: '#',
-    githubUrl: '#'
+    githubUrl: 'https://github.com/JauneKece/jurnal_mood_minimalis'
   },
   {
     id: 6,
     title: 'Student Information System',
     category: 'Web Development',
-    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=300&fit=crop',
+    image: studentSys,
     description: 'Comprehensive student information management system with integrated online counseling platform for school operations',
     tech: ['Next.js', 'Nest.js', 'PostgreSQL'],
-    demoUrl: '#',
-    githubUrl: '#'
+    githubUrl: 'https://github.com/4bit-Team/RuangSiswa-Fe'
   }
 ];

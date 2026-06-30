@@ -100,6 +100,37 @@ select:focus {
   ring-color: #ef4444;
 }
 
+/* Mobile-specific optimizations */
+@media (max-width: 640px) {
+  body {
+    font-size: 14px;
+  }
+  
+  /* Prevent layout shift on mobile */
+  html {
+    overflow-x: hidden;
+  }
+  
+  /* Optimize touch targets */
+  button,
+  a,
+  [role="button"] {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  /* Better spacing on mobile */
+  h1, h2, h3, h4, h5, h6 {
+    word-break: break-word;
+  }
+  
+  /* Prevent image overflow */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
 /* Button Hover Effects */
 button {
   position: relative;

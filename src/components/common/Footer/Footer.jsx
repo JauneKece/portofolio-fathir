@@ -1,8 +1,10 @@
 // src/components/common/Footer/Footer.jsx
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Github, Linkedin, Twitter, Mail, Heart, Code2 } from 'lucide-react';
 
 const Footer = () => {
+  const navigate = useNavigate();
   const currentYear = new Date().getFullYear();
 
   const socialLinks = [
@@ -13,46 +15,46 @@ const Footer = () => {
   ];
 
   const quickLinks = [
-    { label: 'Home', href: '#home' },
-    { label: 'About', href: '#about' },
-    { label: 'Portfolio', href: '#portfolio' },
-    { label: 'Certificates', href: '#certificates' }
+    { label: 'Home', path: '/' },
+    { label: 'About', path: '/about' },
+    { label: 'Portfolio', path: '/portfolio' },
+    { label: 'Certificates', path: '/certificates' }
   ];
 
   return (
     <footer className="relative bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900 text-white overflow-hidden">
       {/* Animated Background Elements */}
       <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-red-500 rounded-full blur-3xl animate-pulse" style={{ animationDuration: '4s' }}></div>
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-orange-500 rounded-full blur-3xl animate-pulse" style={{ animationDuration: '5s', animationDelay: '1s' }}></div>
+        <div className="absolute top-0 right-0 w-64 sm:w-96 h-64 sm:h-96 bg-red-500 rounded-full blur-3xl animate-pulse" style={{ animationDuration: '4s' }}></div>
+        <div className="absolute bottom-0 left-0 w-64 sm:w-96 h-64 sm:h-96 bg-orange-500 rounded-full blur-3xl animate-pulse" style={{ animationDuration: '5s', animationDelay: '1s' }}></div>
       </div>
 
       {/* Main Content */}
-      <div className="relative z-10 max-w-6xl mx-auto px-4 py-16">
-        <div className="grid md:grid-cols-4 gap-12 mb-12">
+      <div className="relative z-10 max-w-6xl mx-auto px-3 sm:px-4 py-12 sm:py-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 sm:gap-10 md:gap-12 mb-8 sm:mb-12">
           {/* Brand */}
-          <div className="col-span-md:1 md:col-span-1">
-            <div className="flex items-center space-x-2 mb-4">
-              <Code2 className="text-red-500" size={28} />
-              <span className="text-2xl font-bold">Fathir</span>
+          <div className="col-span-full sm:col-span-1">
+            <div className="flex items-center space-x-2 mb-3 sm:mb-4">
+              <Code2 className="text-red-500" size={24} />
+              <span className="text-xl sm:text-2xl font-bold">Fathir</span>
             </div>
-            <p className="text-slate-400 text-sm leading-relaxed">
-              Full Stack Developer creating innovative digital solutions with modern technologies.
+            <p className="text-slate-400 text-xs sm:text-sm leading-relaxed">
+              Frontend & Mobile Developer passionate about creating beautiful, intuitive digital experiences across platforms.
             </p>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h3 className="font-bold text-lg mb-4 text-white">Navigation</h3>
+            <h3 className="font-bold text-base sm:text-lg mb-3 sm:mb-4 text-white">Navigation</h3>
             <ul className="space-y-2">
               {quickLinks.map((link) => (
                 <li key={link.label}>
-                  <a 
-                    href={link.href}
-                    className="text-slate-400 hover:text-red-500 transition-colors duration-300 text-sm"
+                  <button
+                    onClick={() => navigate(link.path)}
+                    className="text-slate-400 hover:text-red-500 transition-colors duration-300 text-xs sm:text-sm cursor-pointer text-left"
                   >
                     {link.label}
-                  </a>
+                  </button>
                 </li>
               ))}
             </ul>
@@ -60,22 +62,22 @@ const Footer = () => {
 
           {/* Services */}
           <div>
-            <h3 className="font-bold text-lg mb-4 text-white">Services</h3>
-            <ul className="space-y-2 text-slate-400 text-sm">
-              <li className="hover:text-red-500 transition-colors cursor-pointer">Web Development</li>
-              <li className="hover:text-red-500 transition-colors cursor-pointer">Mobile Apps</li>
+            <h3 className="font-bold text-base sm:text-lg mb-3 sm:mb-4 text-white">Focus Areas</h3>
+            <ul className="space-y-2 text-slate-400 text-xs sm:text-sm">
+              <li className="hover:text-red-500 transition-colors cursor-pointer">Frontend Web</li>
+              <li className="hover:text-red-500 transition-colors cursor-pointer">Mobile Development</li>
               <li className="hover:text-red-500 transition-colors cursor-pointer">UI/UX Design</li>
-              <li className="hover:text-red-500 transition-colors cursor-pointer">Consulting</li>
+              <li className="hover:text-red-500 transition-colors cursor-pointer">Clean Code</li>
             </ul>
           </div>
 
           {/* Contact Info */}
           <div>
-            <h3 className="font-bold text-lg mb-4 text-white">Get in Touch</h3>
-            <div className="space-y-3 text-sm text-slate-400">
+            <h3 className="font-bold text-base sm:text-lg mb-3 sm:mb-4 text-white">Get in Touch</h3>
+            <div className="space-y-2 sm:space-y-3 text-xs sm:text-sm text-slate-400">
               <p>📧 fathirdwi28@gmail.com</p>
               <p>📍 Indonesia</p>
-              <p className="text-xs text-slate-500 mt-4">
+              <p className="text-xs text-slate-500 mt-3 sm:mt-4">
                 Always open to new projects and collaboration opportunities.
               </p>
             </div>
@@ -83,12 +85,12 @@ const Footer = () => {
         </div>
 
         {/* Divider */}
-        <div className="border-t border-slate-700 my-8"></div>
+        <div className="border-t border-slate-700 my-8 sm:my-10"></div>
 
         {/* Social Links & Bottom */}
-        <div className="flex flex-col md:flex-row items-center justify-between">
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 sm:gap-6">
           {/* Social Links */}
-          <div className="flex space-x-4 mb-6 md:mb-0">
+          <div className="flex space-x-3 sm:space-x-4">
             {socialLinks.map((social) => {
               const Icon = social.icon;
               return (

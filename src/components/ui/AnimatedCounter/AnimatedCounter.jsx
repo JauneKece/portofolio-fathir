@@ -42,10 +42,10 @@ const AnimatedCounter = ({ end, duration = 2000, label, suffix = '', prefix = ''
 
   return (
     <div ref={ref} className="text-center">
-      <div className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-red-500 to-orange-500 bg-clip-text text-transparent">
+      <div className="text-3xl sm:text-4xl md:text-5xl font-bold bg-gradient-to-r from-red-500 to-orange-500 bg-clip-text text-transparent">
         {prefix}{count}{suffix}
       </div>
-      <p className="text-slate-600 font-medium mt-2">{label}</p>
+      <p className="text-slate-600 font-medium mt-2 text-sm sm:text-base">{label}</p>
     </div>
   );
 };
