@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/portofolio-fathir/static/css/main.12868aa7.css",
-    "main.js": "/portofolio-fathir/static/js/main.2b56f528.js",
-    "static/js/453.798e9613.chunk.js": "/portofolio-fathir/static/js/453.798e9613.chunk.js",
+    "main.css": "/portofolio-fathir/static/css/main.d194b039.css",
+    "main.js": "/portofolio-fathir/static/js/main.4cc4d9e6.js",
+    "static/js/453.de802fc4.chunk.js": "/portofolio-fathir/static/js/453.de802fc4.chunk.js",
     "static/media/web-reservasi.png": "/portofolio-fathir/static/media/web-reservasi.db6ad722152a3b744b71.png",
     "static/media/web-konseling.png": "/portofolio-fathir/static/media/web-konseling.fe9a27639fe35a042157.png",
     "static/media/game-roblox.png": "/portofolio-fathir/static/media/game-roblox.0736d551d217591ccb2b.png",
@@ -19,12 +19,12 @@
     "static/media/app-timemanagement.jpeg": "/portofolio-fathir/static/media/app-timemanagement.8a2e479230fa8fccc263.jpeg",
     "static/media/app-moodjournal.jpeg": "/portofolio-fathir/static/media/app-moodjournal.774f5a5cf27dcabced34.jpeg",
     "index.html": "/portofolio-fathir/index.html",
-    "main.12868aa7.css.map": "/portofolio-fathir/static/css/main.12868aa7.css.map",
-    "main.2b56f528.js.map": "/portofolio-fathir/static/js/main.2b56f528.js.map",
-    "453.798e9613.chunk.js.map": "/portofolio-fathir/static/js/453.798e9613.chunk.js.map"
+    "main.d194b039.css.map": "/portofolio-fathir/static/css/main.d194b039.css.map",
+    "main.4cc4d9e6.js.map": "/portofolio-fathir/static/js/main.4cc4d9e6.js.map",
+    "453.de802fc4.chunk.js.map": "/portofolio-fathir/static/js/453.de802fc4.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.12868aa7.css",
-    "static/js/main.2b56f528.js"
+    "static/css/main.d194b039.css",
+    "static/js/main.4cc4d9e6.js"
   ]
 }
