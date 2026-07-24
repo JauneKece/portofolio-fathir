@@ -1,10 +1,8 @@
 // src/components/common/Footer/Footer.jsx
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
 import { Github, Linkedin, Twitter, Mail, Heart, Code2 } from 'lucide-react';
 
 const Footer = () => {
-  const navigate = useNavigate();
   const currentYear = new Date().getFullYear();
 
   const socialLinks = [
@@ -15,11 +13,19 @@ const Footer = () => {
   ];
 
   const quickLinks = [
-    { label: 'Home', path: '/' },
-    { label: 'About', path: '/about' },
-    { label: 'Portfolio', path: '/portfolio' },
-    { label: 'Certificates', path: '/certificates' }
+    { label: 'About Me', id: 'about' },
+    { label: 'Portfolio', id: 'portfolio' },
+    { label: 'Sertifikat', id: 'certificates' }
   ];
+
+  const scrollToSection = (id) => {
+    const element = document.getElementById(id);
+    if (element) {
+      const yOffset = -80;
+      const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+      window.scrollTo({ top: y, behavior: 'smooth' });
+    }
+  };
 
   return (
     <footer className="relative bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900 text-white overflow-hidden">
@@ -50,7 +56,7 @@ const Footer = () => {
               {quickLinks.map((link) => (
                 <li key={link.label}>
                   <button
-                    onClick={() => navigate(link.path)}
+                    onClick={() => scrollToSection(link.id)}
                     className="text-slate-400 hover:text-red-500 transition-colors duration-300 text-xs sm:text-sm cursor-pointer text-left"
                   >
                     {link.label}

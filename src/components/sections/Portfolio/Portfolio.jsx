@@ -1,5 +1,5 @@
-// src/components/sections/Portfolio/Portfolio.jsx
 import React, { useState } from 'react';
+import ReactDOM from 'react-dom';
 import { ExternalLink, Github, X } from 'lucide-react';
 import Card from '../../ui/Card/Card';
 import Badge from '../../ui/Badge/Badge';
@@ -9,6 +9,17 @@ const Portfolio = () => {
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [selectedProject, setSelectedProject] = useState(null);
 
+  React.useEffect(() => {
+    if (selectedProject) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [selectedProject]);
+
   const categories = ['All', ...new Set(portfolioItems.map(item => item.category))];
 
   const filteredItems = selectedCategory === 'All'
@@ -16,7 +27,7 @@ const Portfolio = () => {
     : portfolioItems.filter(item => item.category === selectedCategory);
 
   return (
-    <div className="min-h-screen py-12 sm:py-16 md:py-20 px-3 sm:px-4">
+    <div className="py-6 sm:py-8 md:py-10 px-3 sm:px-4">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12 sm:mb-16 animate-fade-in">
@@ -134,38 +145,46 @@ const Portfolio = () => {
         </div>
 
         {/* Modal for Project Details */}
-        {selectedProject && (
-          <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4 animate-fade-in">
-            <Card className="max-w-2xl w-full max-h-[90vh] overflow-y-auto relative">
+        {selectedProject && ReactDOM.createPortal(
+          <div 
+            className="fixed inset-0 bg-black/60 backdrop-blur-sm z-[9999] flex items-center justify-center p-3 sm:p-4 animate-fade-in overflow-hidden"
+            onClick={() => setSelectedProject(null)}
+          >
+            <Card 
+              className="max-w-xl w-full max-h-[85vh] sm:max-h-[85vh] overflow-y-auto relative rounded-2xl shadow-2xl p-0 my-auto"
+              onClick={(e) => e.stopPropagation()}
+            >
               <button
                 onClick={() => setSelectedProject(null)}
-                className="absolute top-6 right-6 text-slate-400 hover:text-slate-600 transition-colors z-10 bg-white/80 p-1.5 rounded-full shadow-md"
+                className="absolute top-3 right-3 sm:top-4 sm:right-4 text-slate-600 hover:text-red-500 transition-colors z-10 bg-white/90 backdrop-blur-md p-1.5 sm:p-2 rounded-full shadow-lg border border-slate-100"
               >
-                <X size={24} />
+                <X size={20} className="sm:w-6 sm:h-6" />
               </button>
 
-              <img
-                src={selectedProject.image}
-                alt={selectedProject.title}
-                className="w-full h-80 object-cover"
-              />
+              <div className="relative w-full h-44 sm:h-52 md:h-56 bg-slate-100 overflow-hidden">
+                <img
+                  src={selectedProject.image}
+                  alt={selectedProject.title}
+                  className="w-full h-full object-cover"
+                />
+              </div>
 
-              <div className="p-8">
-                <Badge variant="primary" size="md" className="mb-4">
+              <div className="p-4 sm:p-6 md:p-8">
+                <Badge variant="primary" size="sm" className="mb-2 sm:mb-3">
                   {selectedProject.category}
                 </Badge>
 
-                <h2 className="text-4xl font-bold mb-4 text-slate-800">
+                <h2 className="text-2xl sm:text-3xl font-bold mb-2 sm:mb-3 text-slate-800 leading-tight">
                   {selectedProject.title}
                 </h2>
 
-                <p className="text-slate-600 text-lg leading-relaxed mb-6">
+                <p className="text-slate-600 text-sm sm:text-base leading-relaxed mb-4 sm:mb-6">
                   {selectedProject.description}
                 </p>
 
-                <div className="mb-6">
-                  <h3 className="font-bold text-slate-800 mb-3">Technologies Used</h3>
-                  <div className="flex flex-wrap gap-2">
+                <div className="mb-5 sm:mb-6">
+                  <h3 className="font-bold text-slate-800 text-sm sm:text-base mb-2 sm:mb-3">Technologies Used</h3>
+                  <div className="flex flex-wrap gap-1.5 sm:gap-2">
                     {selectedProject.tech.map((tech) => (
                       <Badge key={tech} variant="secondary" size="sm">
                         {tech}
@@ -174,15 +193,15 @@ const Portfolio = () => {
                   </div>
                 </div>
 
-                <div className="flex flex-col sm:flex-row gap-4 mt-6">
+                <div className="flex flex-col sm:flex-row gap-3 pt-2">
                   {selectedProject.demoUrl && selectedProject.demoUrl !== '#' && (
                     <a 
                       href={selectedProject.demoUrl} 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="flex-1 bg-gradient-to-r from-red-500 to-orange-500 text-white px-6 py-3 rounded-full font-semibold hover:opacity-90 transition-opacity duration-300 flex items-center justify-center space-x-2 shadow-lg"
+                      className="flex-1 bg-gradient-to-r from-red-500 to-orange-500 text-white px-5 py-2.5 sm:py-3 rounded-full font-semibold text-sm hover:opacity-90 transition-opacity duration-300 flex items-center justify-center space-x-2 shadow-md"
                     >
-                      <ExternalLink size={18} />
+                      <ExternalLink size={16} />
                       <span>Live Demo</span>
                     </a>
                   )}
@@ -191,16 +210,17 @@ const Portfolio = () => {
                       href={selectedProject.githubUrl} 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="flex-1 border-2 border-red-500 text-red-500 px-6 py-3 rounded-full font-semibold hover:bg-red-50 transition-colors duration-300 flex items-center justify-center space-x-2"
+                      className="flex-1 border-2 border-red-500 text-red-500 px-5 py-2.5 sm:py-3 rounded-full font-semibold text-sm hover:bg-red-50 transition-colors duration-300 flex items-center justify-center space-x-2"
                     >
-                      <Github size={18} />
+                      <Github size={16} />
                       <span>GitHub</span>
                     </a>
                   )}
                 </div>
               </div>
             </Card>
-          </div>
+          </div>,
+          document.body
         )}
       </div>
 

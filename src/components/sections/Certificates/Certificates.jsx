@@ -1,5 +1,5 @@
-// src/components/sections/Certificates/Certificates.jsx
 import React, { useState } from 'react';
+import ReactDOM from 'react-dom';
 import { ExternalLink, Award, TrendingUp, X } from 'lucide-react';
 import Card from '../../ui/Card/Card';
 import Badge from '../../ui/Badge/Badge';
@@ -22,6 +22,17 @@ const Certificates = () => {
     setSelectedCertificate(null);
     setActiveSide('front');
   };
+
+  React.useEffect(() => {
+    if (isModalOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isModalOpen]);
 
   return (
     <div className="min-h-screen py-12 sm:py-16 md:py-20 px-3 sm:px-4">
@@ -184,43 +195,43 @@ const Certificates = () => {
       </div>
 
       {/* Modal */}
-      {isModalOpen && (
+      {isModalOpen && ReactDOM.createPortal(
         <div 
-          className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+          className="fixed inset-0 bg-black/60 backdrop-blur-sm z-[9999] flex items-center justify-center p-3 sm:p-4 overflow-hidden"
           onClick={closeModal}
         >
           <div 
-            className="bg-white rounded-xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-auto animate-fade-in relative"
+            className="bg-white rounded-2xl shadow-2xl max-w-2xl w-full max-h-[85vh] sm:max-h-[85vh] overflow-y-auto animate-fade-in relative my-auto"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Close Button */}
             <button
               onClick={closeModal}
-              className="absolute top-4 right-4 bg-red-500 hover:bg-red-700 text-white rounded-full p-2 transition-colors z-10 shadow-lg"
+              className="absolute top-3 right-3 sm:top-4 sm:right-4 bg-white/90 backdrop-blur-md text-slate-700 hover:text-red-500 rounded-full p-1.5 sm:p-2 transition-colors z-10 shadow-lg border border-slate-100"
             >
-              <X size={24} />
+              <X size={20} className="sm:w-6 sm:h-6" />
             </button>
 
             {/* Modal Content */}
-            <div className="p-8">
-              <div className="mb-4">
-                <h2 className="text-3xl font-bold text-slate-800 mb-2">
+            <div className="p-4 sm:p-6 md:p-8">
+              <div className="mb-4 pr-8">
+                <h2 className="text-2xl sm:text-3xl font-bold text-slate-800 mb-1 leading-tight">
                   {selectedCertificate?.title}
                 </h2>
-                <p className="text-red-500 font-semibold text-lg">
+                <p className="text-red-500 font-semibold text-sm sm:text-base">
                   {selectedCertificate?.issuer}
                 </p>
-                <p className="text-slate-600 mt-2">
+                <p className="text-slate-500 text-xs sm:text-sm mt-1">
                   {selectedCertificate?.date}
                 </p>
               </div>
 
               {/* Front/Back Toggle if backImage exists */}
               {selectedCertificate?.backImage && (
-                <div className="flex justify-center space-x-3 mb-6">
+                <div className="flex justify-center space-x-2 sm:space-x-3 mb-4">
                   <button
                     onClick={() => setActiveSide('front')}
-                    className={`px-5 py-2 rounded-lg font-semibold text-sm transition-all duration-300 ${
+                    className={`px-4 py-1.5 sm:px-5 sm:py-2 rounded-lg font-semibold text-xs sm:text-sm transition-all duration-300 ${
                       activeSide === 'front'
                         ? 'bg-gradient-to-r from-red-500 to-orange-500 text-white shadow-md'
                         : 'bg-slate-100 hover:bg-slate-200 text-slate-700'
@@ -230,7 +241,7 @@ const Certificates = () => {
                   </button>
                   <button
                     onClick={() => setActiveSide('back')}
-                    className={`px-5 py-2 rounded-lg font-semibold text-sm transition-all duration-300 ${
+                    className={`px-4 py-1.5 sm:px-5 sm:py-2 rounded-lg font-semibold text-xs sm:text-sm transition-all duration-300 ${
                       activeSide === 'back'
                         ? 'bg-gradient-to-r from-red-500 to-orange-500 text-white shadow-md'
                         : 'bg-slate-100 hover:bg-slate-200 text-slate-700'
@@ -242,24 +253,25 @@ const Certificates = () => {
               )}
 
               {/* Certificate Image */}
-              <div className="bg-slate-50 rounded-lg overflow-hidden flex items-center justify-center p-2 border border-slate-100">
+              <div className="bg-slate-50 rounded-xl overflow-hidden flex items-center justify-center p-2 border border-slate-100">
                 <img 
                   src={activeSide === 'back' ? selectedCertificate?.backImage : selectedCertificate?.image} 
                   alt={selectedCertificate?.title}
-                  className="w-full max-h-[60vh] object-contain rounded-md"
+                  className="w-full max-h-[40vh] sm:max-h-[45vh] object-contain rounded-md"
                 />
               </div>
 
               {/* Close Button at Bottom */}
               <button
                 onClick={closeModal}
-                className="mt-8 w-full bg-gradient-to-r from-red-500 to-orange-500 hover:from-red-600 hover:to-orange-600 text-white font-bold py-3 rounded-lg transition-all duration-300 transform hover:scale-105"
+                className="mt-6 w-full bg-gradient-to-r from-red-500 to-orange-500 hover:from-red-600 hover:to-orange-600 text-white font-bold py-2.5 sm:py-3 text-sm sm:text-base rounded-xl transition-all duration-300 shadow-md"
               >
                 Close Certificate
               </button>
             </div>
           </div>
-        </div>
+        </div>,
+        document.body
       )}
 
       <style>{`
